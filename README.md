@@ -1,4 +1,10 @@
 # devTinder
+=> ALL HTTP METHODS
+GET: get data from the server
+POST: want to send and mutate some data in the server
+PUT: updating data in the server
+PATCH: for changing the existing data in the server
+DELETE:
 
 
 # ROUTING
@@ -41,6 +47,21 @@ app.use('/user', (req, res, next) => {
 (req,res)=>{
   console.log('2nd response');
 }) 
+
+# difference between app.use() and app.all()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Based on string patterns
 
