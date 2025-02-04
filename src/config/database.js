@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-      await mongoose.connect("URL");
-      console.log('Connected to MongoDB');
+      await mongoose.connect("mongodb+srv://NikitaNodeJS:UfBvqzLujRqW6GZ@nodecluster.5qzth.mongodb.net/?retryWrites=true&w=majority&appName=NodeCluster/devTinder");
+     
     } catch (err) {
       console.log('Error:', err);
     }

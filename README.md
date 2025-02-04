@@ -84,3 +84,48 @@ This route path will match /abe and /abcde.
 app.get('/ab(cd)?e', (req, res) => {
   res.send('ab(cd)?e')
 })
+
+
+## connecting to the Database
+
+=> create a cluster on MOngoDB
+=> install mongoose Library
+=> Connect your application to the database using connection-string 
+=> call the database first then listen to the app on 7777
+=> creating a schema using mongoose
+
+//app.js
+const express = require("express");
+const connectDB = require("./config/database");
+const app = express();
+
+ 
+
+connectDB()
+.then(()=>{
+    console.log("DB estd successfully!");
+    app.listen(7777,()=>{
+        console.log("server is running successsfully at port 7777")
+    });
+})
+.catch((err)=>{
+    
+    console.error("DB cannot be connected!!")
+})
+
+
+
+//database.js
+const mongoose = require('mongoose');
+//mongoose.connect() => returns a promise so use async await
+
+const connectDB = async () => {
+    try {
+      await mongoose.connect("mongodb+srv://NikitaNodeJS:UfBvqzLujRqW6GZ@nodecluster.5qzth.mongodb.net/?retryWrites=true&w=majority&appName=NodeCluster/devTinder");
+     
+    } catch (err) {
+      console.log('Error:', err);
+    }
+  }
+
+module.exports = connectDB;
